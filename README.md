@@ -4,7 +4,7 @@ Jenkins groovy
 Docker Jenkins App
 ----------------
 ##### Run docker image jenkins to make the tests.
-
+<span style="font-family:Calibri; font-size:4em; font-color: red;">Doing pull</span>
 ```bash
 docker pull jenkins/jenkins:lts
 
