@@ -8,12 +8,7 @@ Docker Jenkins App
 ```bash
 docker pull jenkins/jenkins:lts
 
-docker run -d -i -t \ 
---name jenkins-sample \ 
--p 8080:8080 -p 50000:50000 \ 
--v /tmp/jenkins_home:/var/lib/jenkins_home \ 
--e "JAVA_OPTS=-Djenkins.install.runSetupWizard=false" \ 
-jenkins/jenkins:lts
+docker run -d -i -t --name jenkins-sample -p 8080:8080 -p 50000:50000 -v /tmp/jenkins_home:/var/lib/jenkins_home -e "JAVA_OPTS=-Djenkins.install.runSetupWizard=false" jenkins/jenkins:lts
 
 ```
 |  _Name_  |_Description_|
