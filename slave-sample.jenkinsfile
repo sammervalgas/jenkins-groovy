@@ -1,0 +1,29 @@
+pipeline {
+    agent none
+    stages {
+        stage('Run Tests') {
+            parallel {
+                stage('Run jenkins-slave01') {
+                    agent {
+                        label "jenkins-slave01"
+                    }
+                    steps {
+                        sh "echo ${env.NODE_NAME} running"
+                        sh "sleep 10"
+                        sh "echo ${env.NODE_NAME} finished"
+                    }
+                }
+                stage('Run jenkins-slave02') {
+                    agent {
+                        label "jenkins-slave02"
+                    }
+                    steps {
+                        sh "echo ${env.NODE_NAME} running"
+                        sh "sleep 10"
+                        sh "echo ${env.NODE_NAME} finished"
+                    }
+                }
+            }
+        }
+    }
+}
