@@ -10,10 +10,3 @@ def job = Jenkins.instance.getItemByFullName(jobName).getBranch(branchName)
 job.getBuilds().each { it.delete() }  
 job.nextBuildNumber = 1   
 job.save()
-
-// Abort
-Jenkins.instance
-.getItemByFullName("<JOB NAME>")
-.getBranch("<BRANCH NAME>")
-.getBuildByNumber(<BUILD NUMBER>)
-.finish(hudson.model.Result.ABORTED, new java.io.IOException("Aborting build"));
